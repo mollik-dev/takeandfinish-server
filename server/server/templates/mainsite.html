@@ -1,0 +1,29 @@
+{% extends 'wrapper.html' %}
+
+{% block title %}Take And Finish - Официальный сайт{% endblock %}
+
+{% block sitename %}Take and finish{% endblock %}
+
+{% block navigation %}
+<li class="nav-item active">
+  <a class="nav-link" href="#">Главная</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Уровни других игроков</a>
+</li>
+{% endblock %}
+
+{% block login %}
+<form class="form-inline mt-2 mt-md-0 mr-2" method='get' action="{% url 'login' %}">
+  <input type="hidden" name="next" value="{{request.path}}">
+  <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+</form>
+<form class="form-inline mt-2 mt-md-0" method='get' action="{% url 'register' %}">
+  <input type="hidden" name="next" value="{{request.path}}">
+  <button class="btn btn-danger my-2 my-sm-0" type="submit">Register</button>
+</form>
+{% endblock %}
+
+{% block footer %}
+<span class="">&copy; Synchro-dev 2020, all rights reserved.</span>
+{% endblock %}

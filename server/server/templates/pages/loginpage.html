@@ -1,0 +1,21 @@
+{% extends 'mainsite.html' %}
+
+{% block login %}{% endblock %}
+
+{% block content %}
+<div class="col-4 m-auto">
+  <div class="text-center">
+    <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
+    <hr>
+  </div>
+  <div class="">
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" class="form-control" name="login" required="" placeholder="Имя пользователя">
+      <input type="password" class="form-control mt-2" name="password" required="" placeholder="Пароль">
+
+      <button type="submit" class="btn btn-lg btn-success mt-2 btn-block" name="button">Войти</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
